@@ -95,3 +95,60 @@ public class Q1
 		
 	}
 }
+
+
+///////////////////////
+///////////////////////
+///////////////////////
+
+class Node
+{
+    int data;
+    Node next;
+    Node(int data)
+    {
+        this.data=data;
+        next=null;
+    }
+}
+
+class ll
+{
+    Node head;
+    Node tail;
+    ll()
+    {
+        head=null;
+        tail=null;
+    }
+    void insert_front(int x)
+    {
+        Node ptr=new Node(x);
+        ptr.next=head;
+        head=ptr;
+        if(tail==null)
+        tail=ptr;
+    }
+    void insert_back(int x)
+    {
+        Node ptr=new Node(x);
+        if(tail==null)
+        {
+            tail=ptr;
+            head=ptr;
+        }
+        else
+        {
+            tail.next=ptr;
+            tail=ptr;
+        }
+    }
+    void print_ll()
+    {
+        while(head!=null)
+        {
+            System.out.printf("%c ",head.data);
+            head=head.next;
+        }
+    }
+}
