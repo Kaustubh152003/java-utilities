@@ -6,14 +6,20 @@ public static long sum_of_first_n(long n)
 }
 public static int atoi(String s,int offset)
 {
-    int num=0;
-    int j=offset;
-    while(j<s.length() && s.charAt(j)>='0' && s.charAt(j)<='9')
-    {
-        num=num*10+(int)(s.charAt(j)-'0');
-        j++;
-    }
-    return num;
+        int num=0;
+        int j=offset;
+        int sign=1;
+        if(s.charAt(j)=='-')
+        {
+            sign=-1;
+            j++;
+        }
+        while(j<s.length() && s.charAt(j)>='0' && s.charAt(j)<='9')
+        {
+            num=num*10+(int)(s.charAt(j)-'0');
+            j++;
+        }
+        return sign*num;
 }
 public static int number_of_digits(int x)
 {
