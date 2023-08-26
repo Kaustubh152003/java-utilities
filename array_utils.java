@@ -17,11 +17,11 @@ public static void scan_array(int arr[],int n)
         j++;
     }
 }
-public static int bs(int arr[],int l,int r,int k)
+int bs(int arr[],int l,int r,int k)
 {
     if(l<=r)
     {
-        int m=(r-l+1)/2;
+        int m=(l+r)/2;
         if(arr[m]==k)
         return m;
         else
